@@ -19,7 +19,12 @@ public class Map {
 
     public String getCurrentRoomDiscription ()
     {
-        return currentRoom.getDiscription();
+        String output =  currentRoom.getDiscription();
+        if (currentRoom instanceof FightRoom && ((FightRoom) currentRoom).getIsAlive())
+        {
+            output += "\n" + ((FightRoom) currentRoom).getEnemyEncounterText();
+        }
+        return output;
     }
 
     public Room getCurrentRoom() {

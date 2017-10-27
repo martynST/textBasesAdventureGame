@@ -6,6 +6,7 @@ public class TextBasedAdventureGame {
     private static Map map;
     private static boolean keepGoing = true;
     private static Random roll = new Random();
+    private static Hero hero;
     public static void main(String[] args)
     {
         TextBasedAdventureGame game = new TextBasedAdventureGame();
@@ -14,6 +15,10 @@ public class TextBasedAdventureGame {
         while (keepGoing)
         {
             System.out.println(map.getCurrentRoomDiscription());
+            if (map.getCurrentRoom() instanceof FightRoom)
+            {
+                Battle battle = new Battle(hero, ((FightRoom) map.getCurrentRoom()).getEnemy());
+            }
             System.out.print(":>");
             game.listener();
         }
@@ -21,9 +26,11 @@ public class TextBasedAdventureGame {
     private void greeting()
     {
         System.out.println("Hello, ");
+        System.out.println("--------------");
         System.out.println("---New Game---");
         System.out.println("---xxxxxxxx---");
-        System.out.println("----Help------");
+        System.out.println("-----Help-----");
+        System.out.println("--------------");
         String startMenu;
         boolean startGame = false;
         while (!startGame)
@@ -47,12 +54,15 @@ public class TextBasedAdventureGame {
     private void newGame()
     {
         System.out.println("Hello and welcome to blah, you must now make your character");
-        Hero hero = characterCreation();
+        hero = characterCreation();
         System.out.println("\n" + hero.getStats() + "\n");
     }
     private void getHelp()
     {
-        System.out.println("NO HELP!");
+        System.out.println("Type 'N' or 'North' to go North");
+        System.out.println("Type 'E' or 'East' to go East");
+        System.out.println("Type 'S' or 'South' to go South");
+        System.out.println("Type 'W' or 'West' to go West");
     }
     private boolean getYesNo()
     {
