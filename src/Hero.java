@@ -1,8 +1,8 @@
 public class Hero extends Character{
 
-    public Hero(String name, int[] stats)
+    public Hero(String name, int[] stats, int ac)
     {
-        super(name, stats);
+        super(name, stats, ac);
     }
 
 }

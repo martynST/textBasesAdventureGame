@@ -1,17 +1,17 @@
 public class Map {
     //hard coded map
-    private char[][] myMap = new char[1][2];
-    private Room[][] myRooms = new Room[1][2];
+    private Room[][] myRooms = new Room[3][3];
     private int x;
     private int y;
     private Room currentRoom;
 
     public Map()
     {
-        myMap[0][0] = 'S';
-        myMap[0][1] = 'R';
-        myRooms[0][0] = new TempStartingRoom();
-        myRooms[0][1] = new FightRoom();
+
+        myRooms[0][0] = new TempStartingRoom(false, true, false, false,"You Find yourself in a cave with a path leading east.");
+        myRooms[0][1] = new FightRoom(false, false, true, true, "You continue along the cave...");
+        myRooms[1][2] = new TrapRoom(true, true, true, true, "You exit the cave.");
+
         this.x = 0;
         this.y = 0;
         this.currentRoom = myRooms[x][y];

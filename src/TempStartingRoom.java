@@ -1,7 +1,7 @@
 public class TempStartingRoom extends Room{
 
-    public TempStartingRoom()
+    public TempStartingRoom(boolean north, boolean east, boolean south, boolean west, String discription)
     {
-        super(false ,true, false, false, "You are in a room, you can only go east.");
+        super(north ,east, south, west, discription);
     }
 }

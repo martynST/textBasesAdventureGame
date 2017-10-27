@@ -4,6 +4,7 @@ public class Room {
     private boolean canGoSouth;
     private boolean canGoWest;
     private String discription;
+    private int AC;
 
     public Room(boolean canGoNorth, boolean canGoEast, boolean canGoSouth, boolean canGoWest, String discription)
     {
@@ -12,6 +13,7 @@ public class Room {
         this.canGoSouth = canGoSouth;
         this.canGoWest = canGoWest;
         this.discription = discription;
+        this.AC = 15;
     }
 
     public boolean getCanGoNorth()

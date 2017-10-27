@@ -1,17 +1,15 @@
 public class FightRoom extends Room{
-    private boolean isAlive;
     private Enemy enemy;
 
-    public FightRoom()
+    public FightRoom(boolean north, boolean east, boolean south, boolean west, String discription)
     {
-        super(false ,false, false, true, "You are in a room, you can only go west.");
-        this.isAlive = true;
-        int[] enemyStats = {10,10,10,10,10};
-        this.enemy = new Enemy("Seymour", enemyStats, "Stop fool! Tis I, Seymour");
+        super(north ,east, south, west, discription);
+        int[] enemyStats = {20,20,20,20,20};
+        this.enemy = new Enemy("Seymour", enemyStats, 15,"Stop fool! Tis I, Seymour");
     }
     public boolean getIsAlive()
     {
-        return isAlive;
+        return enemy.getIsAlive();
     }
     public String getEnemyEncounterText()
     {

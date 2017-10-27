@@ -2,27 +2,37 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TextBasedAdventureGame {
-    private static Scanner input = new Scanner(System.in);
-    private static Map map;
-    private static boolean keepGoing = true;
-    private static Random roll = new Random();
-    private static Hero hero;
+    private Scanner input = new Scanner(System.in);
+    private Map map;
+    private boolean keepGoing = true;
+    private Hero hero;
+    private Battle battle = new Battle();
+
     public static void main(String[] args)
     {
         TextBasedAdventureGame game = new TextBasedAdventureGame();
 
         game.greeting();
-        while (keepGoing)
+        while (game.keepGoing)
         {
-            System.out.println(map.getCurrentRoomDiscription());
-            if (map.getCurrentRoom() instanceof FightRoom)
+            System.out.println(game.map.getCurrentRoomDiscription());
+            if (game.map.getCurrentRoom() instanceof FightRoom && ((FightRoom) game.map.getCurrentRoom()).getIsAlive())
             {
-                Battle battle = new Battle(hero, ((FightRoom) map.getCurrentRoom()).getEnemy());
+                if (game.battle.fightStart(game.hero, ((FightRoom) game.map.getCurrentRoom()).getEnemy()))
+                {
+                    System.out.println("You beat " + ((FightRoom) game.map.getCurrentRoom()).getEnemy().getName() + "!");
+                } else {
+                    System.out.println("You Died\nGame Over");
+                    game.keepGoing = false;
+                    continue;
+                }
             }
+
             System.out.print(":>");
             game.listener();
         }
     }
+
     private void greeting()
     {
         System.out.println("Hello, ");
@@ -94,7 +104,7 @@ public class TextBasedAdventureGame {
             System.out.println("Your " + statsName[i] + " is " + stats[i]);
             points -= stats[i];
         }
-        Hero hero = new Hero(name, stats);
+        Hero hero = new Hero(name, stats, 13);
         return hero;
     }
     private int getAttributeAllocation(int points)
@@ -155,17 +165,6 @@ public class TextBasedAdventureGame {
                 System.out.println("Invalid input.");
         }
     }
-
-    private void saveGame()
-    {
-
-    }
-
-    private void loadGame()
-    {
-
-    }
-
     private String nextLine()
     {
         return input.nextLine().toUpperCase();

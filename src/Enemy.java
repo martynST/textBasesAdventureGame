@@ -1,8 +1,8 @@
 public class Enemy extends Character{
     private String encounterText;
-    public Enemy(String name, int[] stats, String encounterText)
+    public Enemy(String name, int[] stats, int ac, String encounterText)
     {
-        super(name, stats);
+        super(name, stats, ac);
         this.encounterText = encounterText;
     }
 

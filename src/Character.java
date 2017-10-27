@@ -3,13 +3,16 @@ public abstract class Character {
     private int[] stats = new int[5];
     private int[] statModifiers = new int[5];
     private int hitPoints;
+    private boolean isAlive = true;
+    private int ac;
 
 
-    public Character(String name, int[] stats)
+    public Character(String name, int[] stats, int ac)
     {
         this.name = name;
         this.stats = stats;
-        this.hitPoints = 5*stats[2];
+        this.ac = ac;
+        this.hitPoints = 3*stats[2];
         setModifiers();
     }
     private void setModifiers()
@@ -26,6 +29,40 @@ public abstract class Character {
             }
         }
 
+    }
+
+    public boolean getIsAlive()
+    {
+        return isAlive;
+    }
+
+    public int getHitPoints() {
+        return hitPoints;
+    }
+    public int getIntModifier() { return statModifiers[0]; }
+    public int getDexModifier() { return statModifiers[1]; }
+    public int getConModifier() { return statModifiers[2]; }
+    public int getPerModifier() { return statModifiers[3]; }
+    public int getStrModifier() { return statModifiers[4]; }
+    public int[] getStatModifiers() {
+        return statModifiers;
+    }
+
+    public int getAc() {
+        return ac;
+    }
+    public void getHit(int hit)
+    {
+        this.hitPoints -= hit;
+        updateIsAlive();
+    }
+    private void updateIsAlive()
+    {
+        if (hitPoints <= 0)
+            isAlive = false;
+    }
+    public String getName() {
+        return name;
     }
 
     public String getStats() {
