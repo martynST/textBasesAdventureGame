@@ -7,9 +7,10 @@ public class HeroTest {
     public void testCreate()
     {
         String name = "jim";
-        int[] stats = {10,5,5,5,5};
+        int[] stats = {16,5,14,1,20};
         Hero hero = new Hero(name,stats, 13);
-        assertEquals("Name: " + name + "\nInteligence: " + stats[0] + "\nDexterity: " + stats[1] + "\nConstitution: " + stats[2] + "\nPerception: " + stats[3] + "\nStrength: " + stats[4], hero.getStats());
+        int[] statMod = hero.getStatModifiers();
+        assertEquals( "Name: " + "jim" + "\nIntelligence: " + "16" + " (" + "3" + ")\nDexterity: " + "5" + " (" + "-3" + ")\nConstitution: " + "14" + " (" + "2" + ")\nPerception: " + "1" + " (" + "-5" + ")\nStrength: " + "20" + " (" + "5" + ")", hero.getStats());
     }
 
 }

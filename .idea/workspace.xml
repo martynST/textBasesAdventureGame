@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89ff0b5b-2657-4afe-a548-e1f6c9b88198" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TextBasedAdventureGame/TempStartingRoom.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/TempStartingRoom.java" afterPath="$PROJECT_DIR$/src/EmptyRoom.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextBasedAdventureGame/Map.class" afterPath="$PROJECT_DIR$/out/production/TextBasedAdventureGame/Map.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextBasedAdventureGame/Room.class" afterPath="$PROJECT_DIR$/out/production/TextBasedAdventureGame/Room.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextBasedAdventureGame/TextBasedAdventureGame.class" afterPath="$PROJECT_DIR$/out/production/TextBasedAdventureGame/TextBasedAdventureGame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Battle.java" afterPath="$PROJECT_DIR$/src/Battle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FightRoom.java" afterPath="$PROJECT_DIR$/src/FightRoom.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map.java" afterPath="$PROJECT_DIR$/src/Map.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Room.java" afterPath="$PROJECT_DIR$/src/Room.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextBasedAdventureGame.java" afterPath="$PROJECT_DIR$/src/TextBasedAdventureGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TrapRoom.java" afterPath="$PROJECT_DIR$/src/TrapRoom.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HeroTest.java" afterPath="$PROJECT_DIR$/src/HeroTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +15,76 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="HeroTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/HeroTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="237" lean-forward="false" selection-start-line="12" selection-start-column="237" selection-end-line="12" selection-end-column="237" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Character.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Character.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="68" column="322" lean-forward="false" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="322" />
+              <folding>
+                <element signature="method#getHit#0;class#Character#0" expanded="false" />
+                <element signature="method#updateIsAlive#0;class#Character#0" expanded="false" />
+                <element signature="e#1550#1551#0" expanded="true" />
+                <element signature="e#1577#1578#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextBasedAdventureGame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TextBasedAdventureGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="186" column="4" lean-forward="false" selection-start-line="186" selection-start-column="4" selection-end-line="186" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#main#0;class#TextBasedAdventureGame#0" expanded="false" />
+                <element signature="method#greeting#0;class#TextBasedAdventureGame#0" expanded="false" />
+                <element signature="method#newGame#0;class#TextBasedAdventureGame#0" expanded="false" />
+                <element signature="method#getHelp#0;class#TextBasedAdventureGame#0" expanded="false" />
+                <element signature="method#getYesNo#0;class#TextBasedAdventureGame#0" expanded="false" />
+                <element signature="method#characterCreation#0;class#TextBasedAdventureGame#0" expanded="false" />
+                <element signature="method#getAttributeAllocation#0;class#TextBasedAdventureGame#0" expanded="false" />
+                <element signature="method#listener#0;class#TextBasedAdventureGame#0" expanded="false" />
+                <element signature="method#nextLine#0;class#TextBasedAdventureGame#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Battle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Battle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="153" column="26" lean-forward="false" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#fightStart#0;class#Battle#0" expanded="false" />
+                <element signature="method#rollInitiative#0;class#Battle#0" expanded="false" />
+                <element signature="method#enemyTurn#0;class#Battle#0" expanded="false" />
+                <element signature="method#heroTurn#0;class#Battle#0" expanded="false" />
+                <element signature="method#rollHit#0;class#Battle#0" expanded="false" />
+                <element signature="method#d20#0;class#Battle#0" expanded="false" />
+                <element signature="method#d20#1;class#Battle#0" expanded="false" />
+                <element signature="method#d6#1;class#Battle#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,7 +112,6 @@
         <option value="$PROJECT_DIR$/src/Hero.java" />
         <option value="$PROJECT_DIR$/src/Enemy.java" />
         <option value="$PROJECT_DIR$/src/Listener.java" />
-        <option value="$PROJECT_DIR$/src/HeroTest.java" />
         <option value="$PROJECT_DIR$/src/Character.java" />
         <option value="$PROJECT_DIR$/src/TempStartingRoom.java" />
         <option value="$PROJECT_DIR$/src/Event.java" />
@@ -63,6 +122,7 @@
         <option value="$PROJECT_DIR$/src/TrapRoom.java" />
         <option value="$PROJECT_DIR$/src/TextBasedAdventureGame.java" />
         <option value="$PROJECT_DIR$/src/Battle.java" />
+        <option value="$PROJECT_DIR$/src/HeroTest.java" />
       </list>
     </option>
   </component>
@@ -145,7 +205,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TextBasedAdventureGame">
+  <component name="RunManager" selected="JUnit.HeroTest">
+    <configuration name="HeroTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="TextBasedAdventureGame" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HeroTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="HeroTest.testCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="TextBasedAdventureGame" />
@@ -273,14 +353,16 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.TextBasedAdventureGame" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.HeroTest.testCreate" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.HeroTest" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.TextBasedAdventureGame" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.HeroTest" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.HeroTest.testCreate" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TextBasedAdventureGame" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +376,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1509091483985</updated>
-      <workItem from="1509091487059" duration="22599000" />
+      <workItem from="1509091487059" duration="23011000" />
     </task>
     <task id="LOCAL-00001" summary="Character creation now roll 1d20 instead of allocate points.">
       <created>1509099982817</created>
@@ -317,22 +399,42 @@
       <option name="project" value="LOCAL" />
       <updated>1509107096542</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finished basic version">
+      <created>1509114207600</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1509114207600</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="HeroTest - 2017.10.27 at 15h 26m 45s.xml">
+      <configuration name="HeroTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HeroTest - 2017.10.27 at 15h 29m 52s.xml">
+      <configuration name="HeroTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HeroTest - 2017.10.27 at 15h 30m 04s.xml">
+      <configuration name="HeroTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="HeroTest_testCreate - 2017.10.27 at 10h 42m 23s.xml">
       <configuration name="HeroTest.testCreate" configurationId="JUnit" />
     </history-entry>
     <history-entry file="HeroTest_testCreate - 2017.10.27 at 10h 48m 33s.xml">
       <configuration name="HeroTest.testCreate" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="HeroTest_testCreate - 2017.10.27 at 15h 26m 31s.xml">
+      <configuration name="HeroTest.testCreate" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22599000" />
+    <option name="totallyTimeSpent" value="23011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -342,12 +444,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36585367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36585367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -373,7 +475,8 @@
     <MESSAGE value="Character creation now roll 1d20 instead of allocate points." />
     <MESSAGE value="added stat modifiers" />
     <MESSAGE value="Fight Room Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fight Room Done" />
+    <MESSAGE value="Finished basic version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished basic version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -409,16 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HeroTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Listener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -446,52 +539,6 @@
         <state relative-caret-position="17">
           <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TextBasedAdventureGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="190" column="26" lean-forward="false" selection-start-line="190" selection-start-column="26" selection-end-line="190" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#TextBasedAdventureGame#0" expanded="false" />
-            <element signature="method#greeting#0;class#TextBasedAdventureGame#0" expanded="false" />
-            <element signature="method#newGame#0;class#TextBasedAdventureGame#0" expanded="false" />
-            <element signature="method#getHelp#0;class#TextBasedAdventureGame#0" expanded="false" />
-            <element signature="method#getYesNo#0;class#TextBasedAdventureGame#0" expanded="false" />
-            <element signature="method#characterCreation#0;class#TextBasedAdventureGame#0" expanded="false" />
-            <element signature="method#getAttributeAllocation#0;class#TextBasedAdventureGame#0" expanded="false" />
-            <element signature="method#listener#0;class#TextBasedAdventureGame#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="method#getHit#0;class#Character#0" expanded="false" />
-            <element signature="method#updateIsAlive#0;class#Character#0" expanded="false" />
-            <element signature="e#1577#1578#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Battle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="153" column="26" lean-forward="false" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#fightStart#0;class#Battle#0" expanded="false" />
-            <element signature="method#rollInitiative#0;class#Battle#0" expanded="false" />
-            <element signature="method#d20#1;class#Battle#0" expanded="false" />
-            <element signature="method#d6#1;class#Battle#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -572,6 +619,66 @@
             <element signature="e#759#760#0" expanded="true" />
             <element signature="e#796#797#0" expanded="true" />
             <element signature="e#830#831#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TextBasedAdventureGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="186" column="4" lean-forward="false" selection-start-line="186" selection-start-column="4" selection-end-line="186" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#TextBasedAdventureGame#0" expanded="false" />
+            <element signature="method#greeting#0;class#TextBasedAdventureGame#0" expanded="false" />
+            <element signature="method#newGame#0;class#TextBasedAdventureGame#0" expanded="false" />
+            <element signature="method#getHelp#0;class#TextBasedAdventureGame#0" expanded="false" />
+            <element signature="method#getYesNo#0;class#TextBasedAdventureGame#0" expanded="false" />
+            <element signature="method#characterCreation#0;class#TextBasedAdventureGame#0" expanded="false" />
+            <element signature="method#getAttributeAllocation#0;class#TextBasedAdventureGame#0" expanded="false" />
+            <element signature="method#listener#0;class#TextBasedAdventureGame#0" expanded="false" />
+            <element signature="method#nextLine#0;class#TextBasedAdventureGame#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Battle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="153" column="26" lean-forward="false" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#fightStart#0;class#Battle#0" expanded="false" />
+            <element signature="method#rollInitiative#0;class#Battle#0" expanded="false" />
+            <element signature="method#enemyTurn#0;class#Battle#0" expanded="false" />
+            <element signature="method#heroTurn#0;class#Battle#0" expanded="false" />
+            <element signature="method#rollHit#0;class#Battle#0" expanded="false" />
+            <element signature="method#d20#0;class#Battle#0" expanded="false" />
+            <element signature="method#d20#1;class#Battle#0" expanded="false" />
+            <element signature="method#d6#1;class#Battle#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="68" column="322" lean-forward="false" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="322" />
+          <folding>
+            <element signature="method#getHit#0;class#Character#0" expanded="false" />
+            <element signature="method#updateIsAlive#0;class#Character#0" expanded="false" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HeroTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="237" lean-forward="false" selection-start-line="12" selection-start-column="237" selection-end-line="12" selection-end-column="237" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
