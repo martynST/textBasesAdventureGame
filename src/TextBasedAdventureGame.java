@@ -1,5 +1,6 @@
-import java.util.Random;
 import java.util.Scanner;
+
+import static java.lang.System.exit;
 
 public class TextBasedAdventureGame {
     private Scanner input = new Scanner(System.in);
@@ -18,17 +19,35 @@ public class TextBasedAdventureGame {
             System.out.println(game.map.getCurrentRoomDiscription());
             if (game.map.getCurrentRoom() instanceof FightRoom && ((FightRoom) game.map.getCurrentRoom()).getIsAlive())
             {
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e) {
+
+                }
                 if (game.battle.fightStart(game.hero, ((FightRoom) game.map.getCurrentRoom()).getEnemy()))
                 {
-                    System.out.println("You beat " + ((FightRoom) game.map.getCurrentRoom()).getEnemy().getName() + "!");
+                    ((FightRoom) game.map.getCurrentRoom()).discription2();
+                    System.out.println(game.map.getCurrentRoomDiscription());
+                    if (((FightRoom) game.map.getCurrentRoom()).getIsBoss())
+                    {
+                        System.out.println("This is who Seymour the Scientist is:");
+                        System.out.println("https://www.youtube.com/watch?v=ky6Cd_0BOMM");
+                        game.keepGoing = false;
+                        continue;
+                    }
                 } else {
                     System.out.println("You Died\nGame Over");
                     game.keepGoing = false;
                     continue;
                 }
             }
+            if (game.map.getCurrentRoom() instanceof TrapRoom && ((TrapRoom) game.map.getCurrentRoom()).getIsActive())
+            {
+                ((TrapRoom) game.map.getCurrentRoom()).encounter(game.hero);
+            }
 
-            System.out.print(":>");
+
+            System.out.print(":> ");
             game.listener();
         }
     }
@@ -38,7 +57,6 @@ public class TextBasedAdventureGame {
         System.out.println("Hello, ");
         System.out.println("--------------");
         System.out.println("---New Game---");
-        System.out.println("---xxxxxxxx---");
         System.out.println("-----Help-----");
         System.out.println("--------------");
         String startMenu;
@@ -73,6 +91,7 @@ public class TextBasedAdventureGame {
         System.out.println("Type 'E' or 'East' to go East");
         System.out.println("Type 'S' or 'South' to go South");
         System.out.println("Type 'W' or 'West' to go West");
+        System.out.println("Type 'A' or 'Attack' to attack whilst in combat");
     }
     private boolean getYesNo()
     {
@@ -91,7 +110,7 @@ public class TextBasedAdventureGame {
     }
     private Hero characterCreation()
     {
-        int points = 30;
+
         System.out.print("Please enter the name of your character: ");
         String name = input.nextLine();
         System.out.println("Hello, " + name + ". Next you must set your attribute points. You may either roll for your stat or take the average roll value of 10");
@@ -99,15 +118,14 @@ public class TextBasedAdventureGame {
         String[] statsName = {"Intelligence", "Dexterity", "Constitution", "Perception", "Strength"};
         for (int i = 0; i < 5; i++)
         {
-            System.out.println(statsName[i] + ": ");
-            stats[i] = getAttributeAllocation(points);
+            System.out.println("\n"+statsName[i] + ": ");
+            stats[i] = getAttributeAllocation();
             System.out.println("Your " + statsName[i] + " is " + stats[i]);
-            points -= stats[i];
         }
         Hero hero = new Hero(name, stats, 13);
         return hero;
     }
-    private int getAttributeAllocation(int points)
+    private int getAttributeAllocation()
     {
        System.out.print("Would you like to roll for this stat? (y/n): ");
        boolean yesNo = getYesNo();
@@ -162,12 +180,15 @@ public class TextBasedAdventureGame {
                 }
                 break;
             default:
-                System.out.println("Invalid input.");
+                System.out.println("Invalid input. :> ");
         }
     }
     private String nextLine()
     {
-        return input.nextLine().toUpperCase();
+        String theirInput =  input.nextLine().toUpperCase();
+        if (theirInput.equals("EXIT") || theirInput.equals("QUIT"))
+            exit(0);
+        return theirInput;
     }
 
 

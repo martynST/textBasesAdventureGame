@@ -32,7 +32,10 @@ public class Room {
     {
         return canGoWest;
     }
-
+    public void updateDiscription(String discription)
+    {
+        this.discription = discription;
+    }
     public String getDiscription() {
         return discription;
     }

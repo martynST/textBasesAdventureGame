@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import static java.lang.System.exit;
+
 public class Battle {//battleSystem
     private Hero hero;
     private Enemy enemy;
@@ -12,19 +14,34 @@ public class Battle {//battleSystem
     }
     public boolean fightStart(Hero hero, Enemy enemy)
     {
-        System.out.println("--BATTLE!--");
+        System.out.println(enemy.getEncounterText());
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+
+        }
+        System.out.println("\n--BATTLE!--\n");
         this.hero = hero;
         this.enemy = enemy;
 
         rollInitiative();
         System.out.println("Your Initiative: " + heroInitiative);
         System.out.println("Enemy Initiative: " + enemyInitiative);
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
 
+        }
         while(hero.getIsAlive() && enemy.getIsAlive())
         {
             if (heroInitiative > enemyInitiative)
             {
                 heroTurn();
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e) {
+
+                }
                 if (enemy.getIsAlive())
                 {
                     enemyTurn();
@@ -34,13 +51,20 @@ public class Battle {//battleSystem
                 if (hero.getIsAlive())
                 {
                     heroTurn();
+                    try {
+                        Thread.sleep(1000);
+                    } catch (Exception e) {
+
+                    }
                 }
             }
         }
         if (enemy.getIsAlive())
         {
+            System.out.println("You Died!");
             return false;
         } else {
+            System.out.println("You beat " + enemy.getName() + "!");
             return true;
         }
     }
@@ -51,12 +75,12 @@ public class Battle {//battleSystem
     }
     private void enemyTurn()
     {
-        System.out.println("Enemy has " + enemy.getHitPoints() + " hit points left.");
-        System.out.println("--Enemy Turn--");
+        System.out.println("\n--Enemy Turn--\n");
         rollHit(enemy,hero);
     }
     private void heroTurn()
     {
+        System.out.println("\n--Player Turn--\n");
         System.out.println("You have " + hero.getHitPoints() + " hit points left.");
         System.out.print("What would you like to do? ");
         boolean isValid = false;
@@ -66,6 +90,7 @@ public class Battle {//battleSystem
             switch (action)
             {
                 case "ATTACK":
+                case "A":
                     isValid = true;
                     rollHit(hero,enemy);
                     break;
@@ -95,7 +120,8 @@ public class Battle {//battleSystem
     }
     private int d20(int modifier)
     {
-        return (int) Math.floor(modifier+1+Math.random()*20);
+        int roll = (int) Math.floor(modifier+1+Math.random()*20);
+        return (roll >= 1) ?  roll : 1;
     }
     private int d20(int num, int modifier)
     {
@@ -117,12 +143,15 @@ public class Battle {//battleSystem
         {
             roll += (int) Math.floor(1+Math.random()*6);
         }
-        return roll + modifier;
+        return (roll + modifier >= 1) ? roll + modifier : 1;
     }
     private String nextLine()
     {
         Scanner input = new Scanner(System.in);
-        return input.nextLine().toUpperCase();
+        String theirInput =  input.nextLine().toUpperCase();
+        if (theirInput.equals("EXIT") || theirInput.equals("QUIT"))
+            exit(0);
+        return theirInput;
     }
 
 }

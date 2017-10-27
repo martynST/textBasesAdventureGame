@@ -8,10 +8,15 @@ public class Map {
     public Map()
     {
 
-        myRooms[0][0] = new TempStartingRoom(false, true, false, false,"You Find yourself in a cave with a path leading east.");
-        myRooms[0][1] = new FightRoom(false, false, true, true, "You continue along the cave...");
-        myRooms[1][2] = new TrapRoom(true, true, true, true, "You exit the cave.");
-
+        myRooms[0][0] = new EmptyRoom(false, true, false, false,"You Find yourself in a cave with a path leading east.");
+        int[] enemyStats = {10,10,10,10,10};
+        myRooms[0][1] = new FightRoom(false, false, true, true, "You continue along the cave...",new Enemy("Seymour", enemyStats, 15,"Stop fool! Tis I, Seymour"), "You have a path to the west and a path leading south.",false);
+        myRooms[1][1] = new TrapRoom(true, true, true, true, "As you walk through the cave you see some light in the distance.", 10,13,10, "You have exited the cave, there are paths leading in all direction.");
+        myRooms[1][0] = new EmptyRoom(false, true,false,false,"Not much here, just the path you came down");
+        myRooms[1][2] = new EmptyRoom(true,true,false,false,"You see a path to the North and East");
+        myRooms[2][1] = new EmptyRoom(false,false,true,true,"You see a path to the South and West");
+        int[] enemyStats2 = {18,16,18,12,29};
+        myRooms[2][2] = new FightRoom(true, false, false, true, "You see some guy", new Enemy("Seymour the Scientist", enemyStats2, 17, "TIS I, THE ONE TRUE SEYMOUR THE SCIENTIST!!!"),"You won the game",true);
         this.x = 0;
         this.y = 0;
         this.currentRoom = myRooms[x][y];
@@ -19,11 +24,7 @@ public class Map {
 
     public String getCurrentRoomDiscription ()
     {
-        String output =  currentRoom.getDiscription();
-        if (currentRoom instanceof FightRoom && ((FightRoom) currentRoom).getIsAlive())
-        {
-            output += "\n" + ((FightRoom) currentRoom).getEnemyEncounterText();
-        }
+        String output = currentRoom.getDiscription();
         return output;
     }
 
@@ -51,6 +52,6 @@ public class Map {
     }
     private void updateRoom()
     {
-        currentRoom = myRooms[x][y];
+        this.currentRoom = this.myRooms[this.x][this.y];
     }
 }
