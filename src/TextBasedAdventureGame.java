@@ -1,54 +1,58 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class TextBasedAdventureGame {
     private static Scanner input = new Scanner(System.in);
-    private static Map map = new Map();
+    private static Map map;
     private static boolean keepGoing = true;
+    private static Random roll = new Random();
     public static void main(String[] args)
     {
         TextBasedAdventureGame game = new TextBasedAdventureGame();
 
-        game.greating();
+        game.greeting();
         while (keepGoing)
         {
+            System.out.println(map.getCurrentRoomDiscription());
             System.out.print(":>");
             game.listener();
         }
     }
-    private void greating()
+    private void greeting()
     {
         System.out.println("Hello, ");
-        System.out.println("---New Game----");
-        System.out.println("---load game---");
-        System.out.println("-----Help------");
+        System.out.println("---New Game---");
+        System.out.println("---xxxxxxxx---");
+        System.out.println("----Help------");
         String startMenu;
-        while (true)
+        boolean startGame = false;
+        while (!startGame)
         {
             startMenu = nextLine();
             switch (startMenu)
             {
                 case "NEW GAME":
                     newGame();
+                    map = new Map();
+                    startGame = true;
                     break;
+                case "HELP":
+                    getHelp();
+                    break;
+                default:
+                    System.out.print("Invalid input\n:> ");
             }
         }
     }
     private void newGame()
     {
         System.out.println("Hello and welcome to blah, you must now make your character");
-        while (true)
-        {
-            Hero hero = characterCreation();
-            System.out.println("\n" + hero.getStats() + "\n");
-            System.out.print("Please confirm you would like to play as this character (y/n): ");
-            if (getYesNo())
-            {
-                break;
-            } else {
-                System.out.println("Please re-enter you character details");
-            }
-
-        }
+        Hero hero = characterCreation();
+        System.out.println("\n" + hero.getStats() + "\n");
+    }
+    private void getHelp()
+    {
+        System.out.println("NO HELP!");
     }
     private boolean getYesNo()
     {
@@ -70,14 +74,14 @@ public class TextBasedAdventureGame {
         int points = 30;
         System.out.print("Please enter the name of your character: ");
         String name = input.nextLine();
-        System.out.println("Hello, " + name + ". Next you must allocate your attribute points. You can have a max of 10 and a minimum of 1 in each attribute, and have 30 attribute points to spend.");
+        System.out.println("Hello, " + name + ". Next you must set your attribute points. You may either roll for your stat or take the average roll value of 10");
         int[] stats = new int[5];
         String[] statsName = {"Intelligence", "Dexterity", "Constitution", "Perception", "Strength"};
         for (int i = 0; i < 5; i++)
         {
-            System.out.println("Points remaining: " + points);
-            System.out.print(statsName[i] + ": ");
+            System.out.println(statsName[i] + ": ");
             stats[i] = getAttributeAllocation(points);
+            System.out.println("Your " + statsName[i] + " is " + stats[i]);
             points -= stats[i];
         }
         Hero hero = new Hero(name, stats);
@@ -85,63 +89,68 @@ public class TextBasedAdventureGame {
     }
     private int getAttributeAllocation(int points)
     {
-        int attributeInput;
-        while (true){
-            try {
-                attributeInput = input.nextInt();
-                if (attributeInput < 1 || attributeInput > 10)
-                    System.out.print("Please enter a number between 1 and 10 inclusive: \n");
-                else if (points - attributeInput < 0)
-                    System.out.println("You do not have enough attribute points remaining, you have " + points + "points left: ");
-                else
-                    return  attributeInput;
-            } catch (Exception e) {
-                System.out.print("Invalid input, please enter a number: ");
-            }
-        }
+       System.out.print("Would you like to roll for this stat? (y/n): ");
+       boolean yesNo = getYesNo();
+       if (yesNo)
+       {
+           return (int) Math.floor(1+Math.random()*20);
+       } else {
+           return 10;
+       }
     }
     private void listener()
     {
-        String thierInput = nextLine();
-        switch (thierInput)
+        String theirInput = nextLine();
+        switch (theirInput)
         {
             case "NORTH":
 
             case "N":
                 if (map.getCurrentRoom().getCanGoNorth())
+                {
                     System.out.println("You headed North.");
-                else
+                    map.moveRoom("NORTH");
+                } else {
                     System.out.println("You cannot go North from here");
+                }
                 break;
             case "EAST":
             case "E":
-                if (map.getCurrentRoom().getCanGoEast())
+                if (map.getCurrentRoom().getCanGoEast()) {
                     System.out.println("You headed East.");
-                else
+                    map.moveRoom("EAST");
+            } else {
                     System.out.println("You cannot go East from here");
+                }
                 break;
             case "SOUTH":
             case "S":
-                if (map.getCurrentRoom().getCanGoSouth())
+                if (map.getCurrentRoom().getCanGoSouth()) {
                     System.out.println("You headed South.");
-                else
+                    map.moveRoom("SOUTH");
+                } else {
                     System.out.println("You cannot go South from here");
+                }
                 break;
             case "WEST":
             case "W":
-                if (map.getCurrentRoom().getCanGoWest())
+                if (map.getCurrentRoom().getCanGoWest()) {
                     System.out.println("You headed West.");
-                else
+                    map.moveRoom("WEST");
+                } else {
                     System.out.println("You cannot go West from here");
+                }
                 break;
             default:
-                System.out.println("Invlid input.");
+                System.out.println("Invalid input.");
         }
     }
+
     private void saveGame()
     {
 
     }
+
     private void loadGame()
     {
 

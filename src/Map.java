@@ -11,26 +11,41 @@ public class Map {
         myMap[0][0] = 'S';
         myMap[0][1] = 'R';
         myRooms[0][0] = new TempStartingRoom();
-        myRooms[0][1] = new TempRoom1();
+        myRooms[0][1] = new FightRoom();
         this.x = 0;
         this.y = 0;
         this.currentRoom = myRooms[x][y];
     }
 
-    public char[][] getMyMap() {
-        return myMap;
-    }
-
-    public int[] getCurrentLcation() {
-        int[] currentLcation = {x,y};
-        return currentLcation;
-    }
-
-    public Room[][] getMyRooms() {
-        return myRooms;
+    public String getCurrentRoomDiscription ()
+    {
+        return currentRoom.getDiscription();
     }
 
     public Room getCurrentRoom() {
         return currentRoom;
+    }
+    public void moveRoom(String direction)
+    {
+        switch (direction)
+        {
+            case "NORTH":
+                x--;
+                break;
+            case "EAST":
+                y++;
+                break;
+            case "SOUTH":
+                x++;
+                break;
+            case "WEST":
+                y--;
+                break;
+        }
+        updateRoom();
+    }
+    private void updateRoom()
+    {
+        currentRoom = myRooms[x][y];
     }
 }
